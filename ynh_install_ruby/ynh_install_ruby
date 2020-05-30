@@ -78,6 +78,9 @@ ynh_install_ruby () {
     ynh_install_rbenv
   fi
 
+  # upgrade ruby-build
+  git -C "$(rbenv root)"/plugins/ruby-build pull
+
   # Restore /usr/local/bin in PATH (if needed)
   PATH=$CLEAR_PATH
 
